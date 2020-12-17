@@ -1,11 +1,13 @@
 @echo off
 
 echo downloading JDK 15 from jdk.java.net using a HTTP request, this may take a while...
-set "download=certutil.exe -urlcache -split -f"
-%download% "https://download.java.net/java/GA/jdk15.0.1/51f4f36ad4ef43e39d0dfdbaf6549e32/9/GPL/openjdk-15.0.1_windows-x64_bin.zip" jdk.zip
+powershell -Command "$url = 'https://download.java.net/java/GA/jdk15.0.1/51f4f36ad4ef43e39d0dfdbaf6549e32/9/GPL/openjdk-15.0.1_windows-x64_bin.zip'
+| $Dest = '.\\'
+| $web = New-Object -TypeName System.Net.WebClient"
+| $web.DownloadFile($url,$Dest)"
 
 echo unpacking zip file...
-powershell -Command "Expand-Archive jdk.zip"
+
 copy jdk\jdk-15.0.1\bin jdk
 copy jdk\jdk-15.0.1\conf jdk
 copy jdk\jdk-15.0.1\include jdk
