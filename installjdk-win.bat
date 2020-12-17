@@ -28,14 +28,14 @@ echo [REFLECTING PARAMS] %* | find "-njh"
 goto skip_setjh
 if errorlevel 1 goto setjh
 :setjh
-    setx JAVA_HOME %~f0\jdk
+    setx "JAVA_HOME=%~f0\jdk"
 :skip_setjh
 
 echo [REFLECTING PARAMS] %* | find "-nsp" 
 goto skip_setpath
 if errorlevel 1 goto setpath
 :setpath
-    setx PATH %PATH%;%~f0\jdk\bin
+    setx "PATH=%PATH%;%~f0\jdk\bin"
 :skip_setpath
 
 echo done!
