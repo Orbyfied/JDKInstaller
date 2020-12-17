@@ -4,7 +4,7 @@ echo downloading JDK 15 from jdk.java.net using a HTTP request, this may take a 
 powershell -Command "Invoke-WebRequest https://download.java.net/java/GA/jdk15.0.1/51f4f36ad4ef43e39d0dfdbaf6549e32/9/GPL/openjdk-15.0.1_windows-x64_bin.zip -Outfile jdk.zip"
 
 echo unpacking zip file...
-powershell -Command "Expand-Archive jdk.zip -DestinationPath \\"
+powershell -Command "Expand-Archive jdk.zip"
 rename jdk-15.0.1 jdk
 
 echo [REFLECTING PARAMS] %* | find "-jp" 
