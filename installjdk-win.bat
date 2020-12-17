@@ -13,8 +13,8 @@ copy jdk\jdk-15.0.1\jmods jdk
 copy jdk\jdk-15.0.1\legal jdk
 copy jdk\jdk-15.0.1\lib jdk
 copy jdk\jdk-15.0.1\release jdk
-delete jdk\jdk-15.0.1
-delete jdk.zip
+del jdk\jdk-15.0.1
+del jdk.zip
 
 echo [REFLECTING PARAMS] %* | find "-njp" 
 if errorlevel 1 goto writejavapath
